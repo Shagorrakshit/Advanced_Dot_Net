@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbl_demoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Book_Inventory_Table">
+    <Key>
+      <PropertyRef Name="Book_Id" />
+    </Key>
+    <Property Name="Book_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Book_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Author_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Edition" Type="varchar" MaxLength="50" />
+    <Property Name="Count" Type="int" />
+    <Property Name="Student_Id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Book_Request_Table1">
+    <Key>
+      <PropertyRef Name="Book_Id" />
+    </Key>
+    <Property Name="Book_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Book_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Auther_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Edition" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Student_Id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Login_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Student_Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dob" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cgpa" Type="float" Nullable="false" />
+    <Property Name="Merit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TokenKey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="ExpiredAt" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="dbl_demoModelStoreContainer">
+    <EntitySet Name="Book_Inventory_Table" EntityType="Self.Book_Inventory_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book_Request_Table1" EntityType="Self.Book_Request_Table1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Table" EntityType="Self.Login_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Table" EntityType="Self.Student_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
